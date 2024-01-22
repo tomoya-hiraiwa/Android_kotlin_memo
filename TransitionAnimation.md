@@ -27,6 +27,9 @@
         })
     }
 }
+```
 
 ・Explodeの場合
+
+![explode](https://github.com/tomoya-hiraiwa/Android_kotlin_memo/blob/main/video/explode.gif)
 
