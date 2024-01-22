@@ -34,5 +34,6 @@
 ![explode](https://github.com/tomoya-hiraiwa/Android_kotlin_memo/blob/main/video/explode.gif)
 
 ・Slideの場合 Slide(Gravity.~)でスライド方向設定可能
+
 ![slide](https://github.com/tomoya-hiraiwa/Android_kotlin_memo/blob/main/video/Slide.gif)
 
