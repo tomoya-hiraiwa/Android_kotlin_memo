@@ -6,28 +6,28 @@
 
 ### kotlin
 
-・[List関連](list.md)
+・[List関連](text/List.md)
 
-・[日時](use_date_and_time.md)
+・[日時](text/use_date_and_time.md)
 
 ### UIコンポーネント
 
-・[EditText](EditText.md)
+・[EditText](text/EditText.md)
 
 ### アニメーション
 
-・[TransitionAnimation](TransitionAnimation.md)
+・[TransitionAnimation](text/TransitionAnimation.md)
 
-・[TranstionManager](TranstitionManager.md)
+・[TranstionManager](text/TransitionManager.md)
 
 ### ライフサイクル関連
 
-・[ViewPager使用時のFragment](LifeCycle.md)
+・[ViewPager使用時のFragment](text/LifeCycle.md)
 
 ### セキュリティ、暗号化
 
-・[AES256](AES256.md)
+・[AES256](text/AES256.md)
 
 ### ライブラリ
 
-・[Gson](gson.md)
+・[Gson](text/gson.md)
