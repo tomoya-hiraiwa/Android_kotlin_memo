@@ -39,4 +39,7 @@ private fun dialog(){
     }
 ```
 
+![pop_dialog](https://github.com/tomoya-hiraiwa/Android_kotlin_memo/blob/main/video/pop_dialog.gif)
+
+
 
