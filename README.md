@@ -33,3 +33,7 @@
 ・[Gson](text/gson.md)
 
 ・[zxing_QR](text/zxing_QR_Reader.md)
+
+### その他
+
+・[変数テンプレ](text/variable_template.md)
