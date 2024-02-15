@@ -10,6 +10,8 @@
 
 ・[日時](text/use_date_and_time.md)
 
+・[画面サイズ取得](text/get_displaysize.md)
+
 ### UIコンポーネント
 
 ・[EditText](text/EditText.md)
