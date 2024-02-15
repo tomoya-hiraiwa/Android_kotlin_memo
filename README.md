@@ -14,6 +14,10 @@
 
 ・[EditText](text/EditText.md)
 
+### ハードウェア
+
+・[バイブレーション](text/Vibrator.md)
+
 ### アニメーション
 
 ・[TransitionAnimation](text/TransitionAnimation.md)
