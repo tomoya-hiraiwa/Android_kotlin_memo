@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-###　指定回数バイブレーションする場合
+### 指定回数バイブレーションする場合
 
 ```kotlin
 val vibrator = VibrationEffect.createWaveform(longArrayOf(1000,1000), intArrayOf(0,VibrationEffect.DEFAULT_AMPLITUDE),0)
@@ -38,3 +38,9 @@ val vibrator = VibrationEffect.createWaveform(longArrayOf(1000,1000), intArrayOf
 第3引数：繰り返す際の開始地点のインデックス
 
 　・-1→繰り返しなし
+
+ ### 繰り返しを終了
+
+```kotlin
+vibe.cancel()
+```
