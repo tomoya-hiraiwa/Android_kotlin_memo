@@ -16,6 +16,8 @@
 
 ・[EditText](text/EditText.md)
 
+・[RecyclerView](text/RecyclerView.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
