@@ -113,6 +113,19 @@ val listTouch = ItemTouchHelper(ListTouchHelper())
         listTouch.attachToRecyclerView(list)
 ```
 
+## リストのスワイプ動作
+
+・onSwipedメソッドに記述する
+
+例：
+
+```kotlin
+override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                dataList.removeAt(viewHolder.adapterPosition)
+                adapter.notifyItemRemoved(viewHolder.adapterPosition)
+        }
+```
+
 
 
 
