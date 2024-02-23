@@ -167,6 +167,8 @@ override fun onChildDraw(
 
 ・if(dX == 0f){...}→スワイプで位置が戻された時に背景をもう一度隠すため
 
+![list_delete](/photos/list_delete.png)
+
 
 
 
