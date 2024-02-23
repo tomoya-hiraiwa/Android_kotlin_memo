@@ -126,6 +126,47 @@ override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         }
 ```
 
+## リストスワイプ時の背景、アイコンの設定
+
+・ItemTouchHelper.SimpleCallBack.onChildDrawメソッドをoverride
+
+例：
+
+```kotlin
+override fun onChildDraw(
+            c: Canvas,
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            dX: Float,
+            dY: Float,
+            actionState: Int,
+            isCurrentlyActive: Boolean
+        ) {
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+            val background = ColorDrawable(Color.RED)
+            val itemView = viewHolder.itemView
+            val drawable = ResourcesCompat.getDrawable(resources, R.drawable.baseline_delete_24, theme)!!
+            val iconMargin = (itemView.height - drawable.intrinsicHeight) / 2
+            val iconTop = itemView.top + (itemView.height - drawable.intrinsicHeight) /2
+            println(drawable)
+            drawable.setBounds(itemView.left +iconMargin, itemView.top+iconMargin, itemView.left + drawable.intrinsicWidth + iconMargin, iconTop + drawable.intrinsicHeight)
+            background.setBounds(itemView.left +10,itemView.top + 10, itemView.left + dX.toInt(), itemView.bottom -10)
+            if (dX == 0f){
+                background.setBounds(0,0,0,0)
+            }
+            background.draw(c)
+            drawable.draw(c)
+        }
+```
+
+・iconMargin→アイテム全体の高さからアイコンの高さをひいて半分することで、アイコンを垂直方向の中央に配置している（水平方向もこの値を使えば同じ余白）
+
+・iconTop→アイテムビューの上端位置にアイコンの高さの半分を加算することで、アイコンがアイテムビューの上端から中央に配置されるようにしている
+
+・setBoundsで要素の配置位置を決定(left,top,right,bottom)
+
+・if(dX == 0f){...}→スワイプで位置が戻された時に背景をもう一度隠すため
+
 
 
 
