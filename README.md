@@ -14,6 +14,8 @@
 
 ### UIコンポーネント
 
+・[ImageView](text/ImageView.md)
+
 ・[EditText](text/EditText.md)
 
 ・[RecyclerView](text/RecyclerView.md)
