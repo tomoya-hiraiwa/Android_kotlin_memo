@@ -8,4 +8,4 @@ TBD
 
 ・API33未満→gravityの設定なしでもエミュレータ表示可能
 
-・AOI33以上→gravity:startの設定がないとエミュレータ起動時にno drawerのエラーが発生
+・API33以上→gravity:startの設定がないとエミュレータ起動時にno drawerのエラーが発生
