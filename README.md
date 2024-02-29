@@ -34,7 +34,7 @@
 
 ### デザイン、スタイル
 
-・[DarkTheme](text/DarkThemer.md)
+・[DarkTheme](text/DarkTheme.md)
 
 ### データベース
 
