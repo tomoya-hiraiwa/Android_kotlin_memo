@@ -32,6 +32,10 @@
 
 ・[TranstionManager](text/TransitionManager.md)
 
+### デザイン、スタイル
+
+・[DarkTheme](text/DarkThemer.md)
+
 ### データベース
 
 ・[SQLite](text/SQLite.md)
