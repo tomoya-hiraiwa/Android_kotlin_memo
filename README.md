@@ -32,6 +32,8 @@
 
 ・[TranstionManager](text/TransitionManager.md)
 
+・[ContainerTransition](text/ContainerTransition.md)
+
 ### デザイン、スタイル
 
 ・[DarkTheme](text/DarkTheme.md)
