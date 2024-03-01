@@ -65,3 +65,47 @@ val conf = requireActivity().resources.configuration.uiMode and Configuration.UI
         else b.root.setBackgroundColor(requireContext().resources.getColor(R.color.md_theme_light_background,requireActivity().theme))
 ```
 
+### 戻る時に閉じているように見せるアニメーションを実装する
+
+1.選択したリストアイテムの画面上での位置を取得する
+
+```kotlin
+ adapter.setOnWordListClicker(object: WordListAdapter.WordListClicker{
+                override fun onClick(data: Word,view: View) {
+                    val top = view.top
+                    val height = view.height
+                    val screenHeight = top + height
+                    v.cardPosition = screenHeight
+                    //println(screenHeight)
+                    parentFragmentManager.beginTransaction()
+                        .addSharedElement(view,"to_detail")
+                        .replace(R.id.fragmentContainerView,VocDetailFragment())
+                        .commit()
+                }
+            })
+```
+
+2.遷移後の画面から戻る時にアニメーションを実装する
+
+```kotlin
+b.back.setOnClickListener {
+            //画面の背景をGrayにする
+            requireActivity().window.setBackgroundDrawable(ColorDrawable(Color.GRAY))
+            b.root.animate().alpha(0f).setDuration(100)
+            //縮小する時のY軸の基準位置を取得したリストアイテムの位置にする
+            b.root.pivotY = v.cardPosition.toFloat()
+            //サイズを縮小する
+            b.root.animate().scaleY(0.5f).setDuration(200).withEndAction {
+            //画面の背景を戻す
+                val conf = requireActivity().resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+                if (conf == Configuration.UI_MODE_NIGHT_YES){
+                    requireActivity().window.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.md_theme_dark_background,requireActivity().theme)))
+                }
+                else requireActivity().window.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.md_theme_light_background,requireActivity().theme)))
+                //フラグメントを切り替える
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView, ShowVocFragment())
+                    .commit()
+            }
+        }
+
