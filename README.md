@@ -14,9 +14,13 @@
 
 ### UIコンポーネント
 
+・[ImageView](text/ImageView.md)
+
 ・[EditText](text/EditText.md)
 
 ・[RecyclerView](text/RecyclerView.md)
+
+・[NavigtionDrawer](text/NavigationDrawer.md)
 
 ### ハードウェア
 
@@ -27,6 +31,16 @@
 ・[TransitionAnimation](text/TransitionAnimation.md)
 
 ・[TranstionManager](text/TransitionManager.md)
+
+・[ContainerTransition](text/ContainerTransition.md)
+
+### デザイン、スタイル
+
+・[DarkTheme](text/DarkTheme.md)
+
+### データベース
+
+・[SQLite](text/SQLite.md)
 
 ### ライフサイクル関連
 
