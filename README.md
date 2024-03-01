@@ -36,6 +36,8 @@
 
 ### デザイン、スタイル
 
+・[Orientation](text/Orientation.md)
+
 ・[DarkTheme](text/DarkTheme.md)
 
 ### データベース
