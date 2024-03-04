@@ -343,3 +343,187 @@ if (allPermissionGranted()){
           )
         }
 ```
+
+```kotlin
+//すべてのパーミッションが許可されているかの検証
+ private fun allPermissionGranted() = REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(
+            baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+```
+
+上記コードの元の形
+
+```kotlin
+private fun allPermissionsGranted(): Boolean {
+  for (permission in REQUIRED_PERMISSIONS) {
+    if (ContextCompat.checkSelfPermission(baseContext, permission) != PackageManager.PERMISSION_GRANTED) {
+      return false
+    }
+  }
+  return true
+}
+```
+
+```kotlin
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CODE_PERMISSIONS){
+            if (allPermissionGranted()){
+                startCamera()
+            } else {
+                Toast.makeText(this, "Permissions not granted by the user.", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+        }
+    }
+```
+
+リクエストについての詳細は[RequestPermission](text/RequestPermission)参照
+
+・　カメラの起動
+
+```kotlin
+private fun startCamera(){
+        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
+        cameraProviderFuture.addListener({
+            //use to bind the lifecycle of cameras to the lifecycle owner
+            val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+
+            ///Preview画面の設定
+            val preview = Preview.Builder()
+                .build()
+                .also {
+                    it.setSurfaceProvider(b.viewFinder.surfaceProvider)
+                }
+            //録画レコーダーの設定
+            val recorder = Recorder.Builder()
+                .setQualitySelector(QualitySelector.from(Quality.HIGHEST,FallbackStrategy.higherQualityOrLowerThan(
+                    Quality.SD)))
+                .build()
+            videoCapture = VideoCapture.withOutput(recorder)
+                 imageCapture = ImageCapture.Builder().build()
+            //select back camera as a default
+            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+            try {
+                //unbind use cases before rebinding
+                cameraProvider.unbindAll()
+                //bind use cases to camera
+                cameraProvider.bindToLifecycle(
+                    this,cameraSelector,preview,imageCapture, videoCapture
+                )
+
+            } catch (e: Exception){
+                Log.e(TAG, "Use case binding failed",e )
+            }
+        },ContextCompat.getMainExecutor(this))
+    }
+```
+
+・写真撮影、保存メソッド
+
+```kotlin
+ private fun takePhoto(){
+        //get a stable reference of the modifiable image capture use case
+        val imageCapture = imageCapture ?: return
+        //create time stamped name and MediaStore entry
+        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.US)
+            .format(System.currentTimeMillis())
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P){
+                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/CameraX-Image")
+            }
+        }
+        //create output options object which contains file + metadata
+        val outputOptions = ImageCapture.OutputFileOptions
+            .Builder(contentResolver,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                contentValues).build()
+        //set up image capture listener, which is triggered after photo has been token
+        imageCapture.takePicture(
+            outputOptions,
+            ContextCompat.getMainExecutor(this),
+            object: ImageCapture.OnImageSavedCallback {
+                override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
+                    val msg = "Photo capture succeeded: ${outputFileResults.savedUri}"
+                    Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                    Log.d(TAG, msg)
+                }
+
+                override fun onError(exception: ImageCaptureException) {
+                    Log.e(TAG, "Photo capture failed: ${exception.message}",exception )
+                }
+
+            }
+        )
+    }
+```
+
+・録画メソッド
+
+```kotlin
+ private fun captureVideo(){
+        val videoCapture = this.videoCapture ?: return
+        b.videoCaptureButton.isEnabled  = false
+        val curRecording = recording
+        if (curRecording != null){
+            //stop the current recording session.
+            curRecording.stop()
+            recording = null
+            return
+        }
+        //crate and start a new recording session
+        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.US)
+            .format(System.currentTimeMillis())
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+            put(MediaStore.MediaColumns.MIME_TYPE, "video/mp4")
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P){
+                put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/CameraX-video")
+            }
+        }
+        val mediaStoreOutputOptions = MediaStoreOutputOptions
+            .Builder(contentResolver, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
+            .setContentValues(contentValues)
+            .build()
+        recording = videoCapture.output
+            .prepareRecording(this, mediaStoreOutputOptions)
+            .apply {
+                if (PermissionChecker.checkSelfPermission(this@MainActivity,
+                    android.Manifest.permission.RECORD_AUDIO) == PermissionChecker.PERMISSION_GRANTED){
+                    withAudioEnabled()
+                }
+            }
+            .start(ContextCompat.getMainExecutor(this)){recordEvent ->
+                when(recordEvent){
+                    is VideoRecordEvent.Start ->{
+                        b.videoCaptureButton.apply {
+                            text = getString(R.string.stop_capture)
+                            isEnabled = true
+                        }
+                    }
+                    is VideoRecordEvent.Finalize ->{
+                        if (!recordEvent.hasError()){
+                            val msg = "Video capture succeeded:${recordEvent.outputResults.outputUri}"
+                            Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                            Log.d(TAG, msg)
+                        }else {
+                            recording?.close()
+                            recording = null
+                            Log.e(TAG, "Video capture ends with error: ${recordEvent.error}", )
+                        }
+                        b.videoCaptureButton.apply {
+                            text = getString(R.string.start_capture)
+                            isEnabled = true
+                        }
+                    }
+                }
+            }
+    }
+```
