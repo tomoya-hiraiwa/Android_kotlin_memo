@@ -24,4 +24,34 @@ onRequestPermissionResult(
 )
 ```
 
-### 
+### 実装例
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        ActivityCompat.requestPermissions(this, REQUEST_PERMISSIONS, REQUEST_CODE)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CODE){
+            for (permission in permissions){
+                if (!checkPermission(permission)){
+                    Toast.makeText(this, "permission failed.", Toast.LENGTH_SHORT).show()
+                    return
+                }
+            }
+            Toast.makeText(this, "permission completed", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun checkPermission(permission: String): Boolean{
+        return ContextCompat.checkSelfPermission(baseContext,permission) == PackageManager.PERMISSION_GRANTED
+    }
+```
+
+
