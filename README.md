@@ -12,6 +12,12 @@
 
 ・[画面サイズ取得](text/get_displaysize.md)
 
+### Android
+
+・[MediaPlayer](text/MediaPlayer.md)
+
+・[Movie](text/Movie.md)
+
 ### UIコンポーネント
 
 ・[ImageView](text/ImageView.md)
@@ -57,6 +63,8 @@
 ・[Gson](text/gson.md)
 
 ・[zxing_QR](text/zxing_QR_Reader.md)
+
+・[CameraX](text/CameraX.md)
 
 ### その他
 
