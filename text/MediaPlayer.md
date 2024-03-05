@@ -90,7 +90,7 @@ mediaPlayer.start()
 |pause()|一時停止する。再開するには`start()`を呼ぶ|
 |stop()|再生を停止する。もう一度再生するには`prepare()`から呼ぶ必要がある|
 |seekTo(long)|再生位置を設定する、シークが完了すると`setOnSeekCompleteListener`を呼ぶ|
-|.currentPosition|現在の再生位置を取得する|
+|getCurrentPosition()|現在の再生位置を取得する|
 |setLooping(Boolean)|trueにすると再生完了時にループ再生する|
 
 
