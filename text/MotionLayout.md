@@ -79,6 +79,43 @@
 
 ・`<Constraint>`タグ:レイアウト内の要素の位置や属性を定義する
 
+### CustomAttribute
+
+・`Constrint`タグ内に`CustomAttribute`を定義することで、文字や背景色などを変更することもできる
+
+例
+
+```xml
+<ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute motion:attributeName="backgroundColor"
+                motion:customColorValue="#FF0000"/>
+            <CustomAttribute motion:attributeName="Text"
+                motion:customStringValue="Test"/>
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+            <CustomAttribute motion:attributeName="backgroundColor"
+                motion:customColorValue="#0038FF"/>
+            <CustomAttribute motion:attributeName="Text"
+                motion:customStringValue="End"/>
+        </Constraint>
+    </ConstraintSet>
+```
+
 ## 実装サンプルなど
 
 TBD
