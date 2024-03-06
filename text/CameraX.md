@@ -15,7 +15,7 @@ implementation("androidx.camera:camera-core:1.3.1")
 
 ### 撮影用のViewのレイアウト作成
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
