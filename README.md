@@ -34,6 +34,8 @@
 
 ### アニメーション
 
+・[MotionLayout](text/MotionLayout.md)
+
 ・[TransitionAnimation](text/TransitionAnimation.md)
 
 ・[TranstionManager](text/TransitionManager.md)
