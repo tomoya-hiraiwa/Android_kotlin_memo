@@ -56,3 +56,14 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ・UIパーツはそれぞれ`@Composable`をつけた関数で作成する
+
+## Previewの使用
+
+### 依存追加
+
+```kotlin
+implementation("androidx.compose.ui:ui-tooling-preview:1.6.2")
+debugImplementation("androidx.compose.ui:ui-tooling:1.6.2")
+```
+
+・使用方法はいつも通り、`@Preview`アノテーションをつける
