@@ -66,6 +66,8 @@
 
 ・[CameraX](text/CameraX.md)
 
+・[Room](text/Room.md)
+
 ### その他
 
 ・[変数テンプレ](text/variable_template.md)
