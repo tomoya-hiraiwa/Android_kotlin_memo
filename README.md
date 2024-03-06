@@ -76,5 +76,7 @@
 
 ### UIコンポーネント
 
+・[View + Compose](text_compose/ViewWithCompose.md)
+
 ・[SearchBar](text_compose/SearchBar.md)
 
