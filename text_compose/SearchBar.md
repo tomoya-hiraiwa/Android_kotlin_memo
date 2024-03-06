@@ -1,4 +1,4 @@
-# SerchView
+# SerchBar
 
 ## レイアウト例
 
