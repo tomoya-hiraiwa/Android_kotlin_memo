@@ -18,6 +18,8 @@
 
 ・[Movie](text/Movie.md)
 
+・[Base64](text/Base64.md)
+
 ### UIコンポーネント
 
 ・[ImageView](text/ImageView.md)
