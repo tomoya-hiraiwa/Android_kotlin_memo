@@ -58,3 +58,18 @@ class ListAdapter(private val dataList: List<News>): RecyclerView.Adapter<ListAd
     }
 }
 ```
+
+## `Canvas: trying to draw too large(~bytes) bitmap.`の対処
+
+・このエラーはImageViewなどに表示する画像のファイルサイズが大きすぎる時に発生する
+
+対処法
+
+例:Bitmapを作成する際に、画像のサイズを縮小するオプションを追加する
+
+```kotlin
+val options = BitmapFactory.Options()
+                options.inSampleSize = 2 //画像サイズを1/2にする
+                val bitmap = BitmapFactory.decodeByteArray(decodeByte,0,decodeByte.size,options)
+                b.imageView.setImageBitmap(bitmap)
+```
