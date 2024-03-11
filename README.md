@@ -44,7 +44,7 @@
 
 ・[ContainerTransition](text/ContainerTransition.md)
 
-・[ActivitySceneTransitionAnimation](text/ActivitySceneTrasitionAnimation.md)
+・[ActivitySceneTransitionAnimation](text/ActivitySceneTransitionAnimation.md)
 
 ### デザイン、スタイル
 
