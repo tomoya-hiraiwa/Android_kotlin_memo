@@ -18,6 +18,8 @@
 
 ・[Movie](text/Movie.md)
 
+・[Base64](text/Base64.md)
+
 ### UIコンポーネント
 
 ・[ImageView](text/ImageView.md)
@@ -82,3 +84,7 @@
 
 ・[SearchBar](text_compose/SearchBar.md)
 
+
+## エラー対応
+
+・[サンプルプロジェクトを開く](text/error_open_sample.md)
