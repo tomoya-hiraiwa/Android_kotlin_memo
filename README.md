@@ -44,6 +44,8 @@
 
 ・[ContainerTransition](text/ContainerTransition.md)
 
+・[ActivitySceneTransitionAnimation](text/ActivitySceneTrasitionAnimation.md)
+
 ### デザイン、スタイル
 
 ・[Orientation](text/Orientation.md)
