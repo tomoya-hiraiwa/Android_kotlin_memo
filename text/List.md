@@ -1,6 +1,6 @@
-## List
+# List
 
-### リスト内のある変数の合計値を求める
+## リスト内のある変数の合計値を求める
 
 ```kotlin
 list.sumOf{...}
@@ -11,3 +11,9 @@ list.sumOf{...}
 ```kotlin
 totalPrice = shopList.sumOf { it.price }
 ```
+
+## `size`と`indices`の違い
+
+### `size`
+
+・`Int`型
