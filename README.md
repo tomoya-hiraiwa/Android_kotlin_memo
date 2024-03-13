@@ -40,6 +40,8 @@
 
 ・[バイブレーション](text/Vibrator.md)
 
+・[StatusBar](text/StatusBar.md)
+
 ### アニメーション
 
 ・[MotionLayout](text/MotionLayout.md)
