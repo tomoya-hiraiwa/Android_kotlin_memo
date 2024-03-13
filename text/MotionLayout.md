@@ -118,5 +118,5 @@
 
 ## 実装サンプルなど
 
-・・[MotionToolBar](text/MotionToolBar.md)
+・[MotionToolBar](/text/MotionToolBar.md)
   
