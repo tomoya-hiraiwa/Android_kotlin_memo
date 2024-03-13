@@ -46,6 +46,8 @@
 
 ・[MotionLayout](text/MotionLayout.md)
 
+・[MotionToolBar](text/MotionToolBar.md)
+
 ・[TransitionAnimation](text/TransitionAnimation.md)
 
 ・[TranstionManager](text/TransitionManager.md)
