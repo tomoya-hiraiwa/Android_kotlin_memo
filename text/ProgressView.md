@@ -4,7 +4,7 @@
 
 ### 完成イメージ
 
-![progress_view](photos/progress_view.png)
+![progress_view](/photos/progress_view.png)
 
 ## Viewクラスの作成
 
