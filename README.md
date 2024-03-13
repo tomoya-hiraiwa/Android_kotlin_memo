@@ -34,9 +34,13 @@
 
 ・[NavigtionDrawer](text/NavigationDrawer.md)
 
+・[ProgressView](text/ProgressView.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
+
+・[StatusBar](text/StatusBar.md)
 
 ### アニメーション
 
