@@ -28,6 +28,8 @@
 
 ・[EditText](text/EditText.md)
 
+・[TextInputLayout](text/TextInputLayout.md)
+
 ・[RecyclerView](text/RecyclerView.md)
 
 ・[NavigtionDrawer](text/NavigationDrawer.md)
