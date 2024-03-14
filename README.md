@@ -36,6 +36,8 @@
 
 ・[ProgressView](text/ProgressView.md)
 
+・[BarChart](text/BarChart.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
