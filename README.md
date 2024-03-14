@@ -36,6 +36,8 @@
 
 ・[ProgressView](text/ProgressView.md)
 
+・[BarChart](text/BarChart.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
@@ -45,6 +47,8 @@
 ### アニメーション
 
 ・[MotionLayout](text/MotionLayout.md)
+
+・[MotionToolBar](text/MotionToolBar.md)
 
 ・[TransitionAnimation](text/TransitionAnimation.md)
 
