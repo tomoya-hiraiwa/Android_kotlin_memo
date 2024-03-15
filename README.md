@@ -22,6 +22,8 @@
 
 ・[ShareSheet](text/ShareSheet.md)
 
+・[MediaStore](text/MediaStore.md)
+
 ### UIコンポーネント
 
 ・[Button](text/Button.md)
