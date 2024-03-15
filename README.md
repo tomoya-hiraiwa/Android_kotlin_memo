@@ -38,6 +38,8 @@
 
 ・[BarChart](text/BarChart.md)
 
+・[Caroucel](text/Caroucel.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
