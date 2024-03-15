@@ -20,6 +20,8 @@
 
 ・[Base64](text/Base64.md)
 
+・[ShareSheet](text/ShareSheet.md)
+
 ### UIコンポーネント
 
 ・[Button](text/Button.md)
