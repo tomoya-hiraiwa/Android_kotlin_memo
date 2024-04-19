@@ -1,4 +1,4 @@
-# InterFace
+# Interface
 
 ## 概要
 
