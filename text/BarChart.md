@@ -63,6 +63,11 @@ val scope = CoroutineScope(Dispatchers.IO)
 </LinearLayout>
 ```
 
+>[!IMPORTANT]
+> ### グラフを上向きに伸ばすために
+>
+>親レイアウトに`android:gravity="bottom"`をつけること
+
 ・RecyclerViewの設定
 
 ```kotlin
