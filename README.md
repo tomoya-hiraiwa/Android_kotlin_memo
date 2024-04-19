@@ -8,6 +8,8 @@
 
 ・[abstract](text/abstract.md)
 
+・[Interface](text/Interface.md)
+
 ・[List関連](text/List.md)
 
 ・[日時](text/use_date_and_time.md)
