@@ -36,7 +36,7 @@ interface Hoge{
 
 →定義したメソッドはすべて抽象メソッドになるため
 
-・複数のInterFaceを実装（継承）できる
+・複数のInterfaceを実装（継承）できる
 
 ```kotlin
 class UseHoge:Hoge, Hoge2{
