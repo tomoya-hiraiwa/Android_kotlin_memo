@@ -6,6 +6,8 @@
 
 ### kotlin
 
+・[abstract](text/abstract.md)
+
 ・[List関連](text/List.md)
 
 ・[日時](text/use_date_and_time.md)
@@ -25,6 +27,8 @@
 ・[MediaStore](text/MediaStore.md)
 
 ### UIコンポーネント
+
+・[レイアウト全般](text/GeneralLayoutSettings.md)
 
 ・[Button](text/Button.md)
 
@@ -98,12 +102,25 @@
 
 ## Jetpack Compose
 
+・[Composeの基本](text_compose/Compose_basic.md)
+
 ### UIコンポーネント
 
 ・[View + Compose](text_compose/ViewWithCompose.md)
 
+・[レイアウト全般](text_compose/Compose_Layout.md)
+
 ・[SearchBar](text_compose/SearchBar.md)
 
+・[AppBar](text_compose/ComposeAppBar.md)
+
+・[Button](text_compose/ComposeButton.md)
+
+・[Chip](text_compose/ComposeChip.md)
+
+・[Fab](text_compose/ComposeFab.md)
+
+・[Card](text_compose/ComposeCard.md)
 
 ## エラー対応
 
