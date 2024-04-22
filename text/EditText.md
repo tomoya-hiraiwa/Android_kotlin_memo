@@ -12,8 +12,9 @@ EditText.isFocusable = falese
 
 ```kotlin
  b.textEdit.setOnKeyListener { v, keyCode, event ->
-    if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN){                            println(b.textEdit.text.toString())
-  }
+    if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN){
+     println(b.textEdit.text.toString())
+   }
   true
 }
 ```
