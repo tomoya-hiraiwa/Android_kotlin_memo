@@ -36,6 +36,8 @@
 
 ・[ImageView](text/ImageView.md)
 
+・[MovableImageView](text/MovableImageView.md)
+
 ・[EditText](text/EditText.md)
 
 ・[TextInputLayout](text/TextInputLayout.md)
