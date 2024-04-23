@@ -50,6 +50,8 @@
 
 ・[Caroucel](text/Caroucel.md)
 
+・[NestedScrollView](text/NestedScrollView.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
