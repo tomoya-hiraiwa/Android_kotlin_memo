@@ -47,3 +47,13 @@ val listSize = list.indices //0..-1
 //for文で使いたい時
 for(i in list.indeces){} //リストのインデックス範囲分繰り返す
 ```
+
+## リストからランダムな値をn個取得する
+
+### リストの順番を入れ替えてから`take`メソッドを用いて取得する
+
+```kotlin
+ val randomColors = selectColorData.shuffled().take(3)
+```
+
+
