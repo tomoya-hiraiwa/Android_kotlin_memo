@@ -54,6 +54,8 @@
 
 ・[NestedScrollView](text/NestedScrollView.md)
 
+・[ColorPicker](text/ColorPicker.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
