@@ -55,3 +55,27 @@ data class Test(val name: String,val count: String)
 ```
 
 ・res/xml/にファイルを配置する
+
+### Parser基本コード
+
+```kotlin
+  fun xmlParser(context: Context): Any {
+        val factory = XmlPullParserFactory.newInstance()
+        val parser = factory.newPullParser()
+        parser.setInput(context.assets.open("enter file name"), "UTF-8")
+        //enter some variable in this
+        var eventType = parser.eventType
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            if (eventType == XmlPullParser.START_TAG) {
+                when (parser.name) {
+                    //write code that how to get data
+                }
+            }
+            else if (eventType == XmlPullParser.TEXT){
+                //write code that how to get data
+            }
+            eventType = parser.next()
+        }
+        return "Any data"
+    }
+```
