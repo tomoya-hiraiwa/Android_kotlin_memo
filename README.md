@@ -16,6 +16,8 @@
 
 ・[画面サイズ取得](text/get_displaysize.md)
 
+・[XML](text/XML.md)
+
 ### Android
 
 ・[MediaPlayer](text/MediaPlayer.md)
