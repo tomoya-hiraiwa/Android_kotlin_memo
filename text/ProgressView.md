@@ -44,6 +44,22 @@ class CircleView(context:Context, attributeSet: AttributeSet): View(context,attr
 
 360度 / `goal`(maxの値) * `value`(現在地)
 
+> [!NOTE]
+> 360度の箇所を任意の角度に変えることで、最大時の円弧の長さを変えることができる
+
+角度を変えた例：
+
+```kotlin
+  val padding = 10f
+        val nowValue = 140f / max * now
+        val rectF = RectF(padding,padding,canvas!!.width - padding,canvas.height -padding)
+        canvas.drawArc(rectF,200f,140f,false,backPaint)
+        canvas.drawArc(rectF,200f,nowValue,false,frontPaint)
+```
+
+![progress_view2](/photos/proggresView2.png)
+
+
 ・`padding`:canvasにpaddingをつけるため、その幅を定義
 
 ・`rectF`:円弧の描画範囲を決める`left`,`top`,`right`,`bottom`の座標取り
