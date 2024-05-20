@@ -58,6 +58,8 @@
 
 ・[ColorPicker](text/ColorPicker.md)
 
+・[Gradient](text/Gradient.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
