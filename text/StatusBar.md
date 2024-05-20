@@ -39,3 +39,13 @@ window.statusBarColor = Color.TRANSPARENT
 > [!Tip]
 > xmlでレイアウトする時、通常はStatusBarの分下げてレイアウト定義されるため、画像などを被せたい場合、
 > `android:layout_marginTop="-30dp"`などをしてレイアウトを明示的に上に上げる必要がある
+
+## StatusBarを非表示にする
+
+> [!CAUTION]
+> 現在このコードはdepricated
+
+```kotlin
+ window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        actionBar?.hide()
+```
