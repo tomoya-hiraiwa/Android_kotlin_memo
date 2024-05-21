@@ -18,7 +18,6 @@ class LineChart(context: Context, attrs: AttributeSet) : View(context, attrs) {
         var nowWidth = 0f
         var nowHeight = addXSize * xCount
         for (i in 1 until (xCount + 1).toInt()) {
-            //縦軸描画
             canvas.drawLine(nowWidth, 0f, nowWidth, canvas.height.toFloat(), Paint().apply {
                 color = Color.GRAY
                 strokeWidth = 5f
