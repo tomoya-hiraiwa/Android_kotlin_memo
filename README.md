@@ -54,6 +54,8 @@
 
 ・[BarChart](text/BarChart.md)
 
+・[LineChart](text/LineChart.md)
+
 ・[Caroucel](text/Caroucel.md)
 
 ・[NestedScrollView](text/NestedScrollView.md)
