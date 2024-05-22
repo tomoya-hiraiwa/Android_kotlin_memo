@@ -16,6 +16,8 @@
 
 ・[画面サイズ取得](text/get_displaysize.md)
 
+・[正規表現](text/Regex.md)
+
 ・[XML](text/XML.md)
 
 ・[CSV](text/CSV.md)
