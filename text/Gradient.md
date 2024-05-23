@@ -44,3 +44,27 @@
   3引数:使用する色のリストを指定
 
   4引数:グラデーション間隔のリストを指定
+
+
+  ## LinearGradient
+
+  ・直線的なグラデーションをする際に使用する
+
+  ### 例
+
+  ```kotlin
+ val colors = intArrayOf(context.getColor(R.color.g1),context.getColor(R.color.g2),context.getColor(R.color.g3))
+        val positions: FloatArray? = floatArrayOf(0f,0.5f,1f)
+        val drawValue = ((canvas.width/2f +400) / 100 * value)
+        println(drawValue)
+        val linearGradient = LinearGradient(0f,0f,canvas.width /2 +400f,0f,colors,positions,Shader.TileMode.MIRROR)
+        valuePaint.shader = linearGradient
+        canvas.drawLine(canvas.width /2f - 400f, canvas.height /2f,canvas.width /2f + 400f,canvas.height/2f,basePaint)
+        canvas.drawLine(canvas.width /2f - 400f, canvas.height /2f,drawValue,canvas.height/2f,valuePaint)
+```
+
+・使用する色のリストを作成する、色変更のポジションを指定するのはSweepGradientと同じ
+
+・第1,2引数にスタートの座標を渡す
+
+・第3,4引数にグラデーション終了の座標を渡す
