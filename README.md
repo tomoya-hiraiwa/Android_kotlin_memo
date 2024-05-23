@@ -20,6 +20,8 @@
 
 ・[XML](text/XML.md)
 
+・[XML(実例)](text/XML2.md)
+
 ・[CSV](text/CSV.md)
 
 ### Android
