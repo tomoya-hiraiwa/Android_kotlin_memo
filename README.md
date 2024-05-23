@@ -66,6 +66,8 @@
 
 ・[Gradient](text/Gradient.md)
 
+・[GradientLineIndicator](text/GradientLineIndicator.md)
+
 ### ハードウェア
 
 ・[バイブレーション](text/Vibrator.md)
