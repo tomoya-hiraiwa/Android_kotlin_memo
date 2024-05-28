@@ -34,4 +34,38 @@ class IndicatorView(context: Context, attrs: AttributeSet): View(context,attrs) 
 }
 ```
 
+## 改良版（サイズ変更など対応）
+
+```kotlin
+class GradientIndicator(context: Context,attrs: AttributeSet): View(context,attrs) {
+    private val max = 100000f
+    var now = 0f
+    private val basePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        strokeCap = Paint.Cap.ROUND
+        strokeWidth = 50f
+        style = Paint.Style.FILL
+        color = Color.GRAY
+    }
+    private val valuePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        strokeWidth = 50f
+        strokeCap = Paint.Cap.ROUND
+        style = Paint.Style.FILL
+    }
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+        val colors = intArrayOf(context.getColor(R.color.g1),context.getColor(R.color.g2),context.getColor(R.color.g3))
+        val positions = floatArrayOf(0f,0.5f,1f)
+        //グラデーションのスタート、終了地点はView描画の座標と合わせる
+        val gradient = LinearGradient(canvas!!.width /2f -300f,0f,canvas!!.width /2f + 300f,0f,colors,positions,Shader.TileMode.MIRROR)
+        valuePaint.shader = gradient
+        //Viewの最大長さ座標-Viewの始点座標で全体の長さを求め、そのうちの割合を求める
+        val value = ((canvas.width /2f + 300f) - (canvas.width /2f -300f)) / max * now
+        canvas.drawLine(canvas.width / 2f - 300f,canvas.height /2f,canvas.width /2f + 300f, canvas.height /2f,basePaint)
+        //Viewの終端座標はViewの始点座標+value
+        canvas.drawLine(canvas.width / 2f - 300f,canvas.height /2f,canvas.width /2f -300f + value, canvas.height /2f,valuePaint)
+    }
+}
+```
+
 ![indicator](/photos/gr_l_ind.png)
