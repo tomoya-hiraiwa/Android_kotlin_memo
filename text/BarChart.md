@@ -106,3 +106,88 @@ class ListAdapter(private val dataList: List<Status>): RecyclerView.Adapter<List
 ```
 
 ![bar](/photos/bar_vertical.png)
+
+
+## Viewを自作する
+
+### 棒グラフ部分のViewを準備
+
+```kotlin
+class BarGraph(context: Context,attrs: AttributeSet): View(context, attrs) {
+    var value = 0f
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        strokeWidth = 50f
+        strokeCap = Paint.Cap.SQUARE
+        style = Paint.Style.FILL
+        color = Color.BLACK
+    }
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+        canvas!!.drawLine(canvas.width /2f, canvas.height.toFloat(), canvas.width /2f,canvas.height - value * 10f,paint)
+    }
+}
+```
+
+### リストのアイテムとして組み込み
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="100dp"
+    android:gravity="bottom|center_horizontal"
+    android:layout_height="wrap_content">
+  <com.example.sales_list.BarGraph
+      android:id="@+id/bar"
+      android:layout_width="20dp"
+      android:layout_height="100dp"/>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:text="aaa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+```
+
+### リストアダプターで値を指定
+
+```kotlin
+class BarChartAdapter(private val dataList: List<PieceData>): RecyclerView.Adapter<BarChartAdapter.BarChartViewHolder>(){
+    inner class BarChartViewHolder(private val b: BarGraphItemBinding): RecyclerView.ViewHolder(b.root){
+        fun bindData(data: PieceData){
+            b.apply {
+                name.text = data.name
+                bar.value = data.piece.toFloat()
+            }
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BarChartViewHolder {
+        return BarChartViewHolder(BarGraphItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+    }
+
+    override fun getItemCount(): Int {
+        return dataList.size
+    }
+
+    override fun onBindViewHolder(holder: BarChartViewHolder, position: Int) {
+        holder.bindData(data = dataList[position])
+    }
+}
+```
+
+### メリット
+
+・Viewクラス作成時に必ず上に伸びるように指定しているので、関係部分のViewのGravityを気にする必要がない
+
+・アニメーションをつける時に`value`の値を変えるだけで済むため、コードが短縮できる
+
+![barchartCode](/photos/barchart_code.png)
+
