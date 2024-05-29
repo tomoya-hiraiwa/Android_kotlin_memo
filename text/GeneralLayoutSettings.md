@@ -13,5 +13,5 @@
 ## `Float`の値を`dp`に変換する
 
 ```kotlin
-val dp = newVal * resources.displayMetrics.density
+val dp = newVal * resources.displayMetrics.density //newVal: Float値
 ```
