@@ -38,6 +38,8 @@
 
 ・[MediaStore](text/MediaStore.md)
 
+・[Notification](text/Notification.md)
+
 ### UIコンポーネント
 
 ・[レイアウト全般](text/GeneralLayoutSettings.md)
