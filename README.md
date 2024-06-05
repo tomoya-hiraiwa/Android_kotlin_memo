@@ -24,6 +24,8 @@
 
 ・[CSV](text/CSV.md)
 
+・[File](text/File.md)
+
 ### Android
 
 ・[MediaPlayer](text/MediaPlayer.md)
