@@ -68,3 +68,39 @@
 ・第1,2引数にスタートの座標を渡す
 
 ・第3,4引数にグラデーション終了の座標を渡す
+
+## 各Gradientクラスの違い
+
+### LinearGradient
+
+・直線的なグラデーションに使用
+
+・水平、垂直、斜めなどの角度で直線的にグラデーション
+
+### RadialGradient
+
+・放射状のグラデーション
+
+・中心点から放射状にグラデーションされる
+
+### SweepGradient
+
+・円周に沿ったグラデーション
+
+・中心点から時計回りにグラデーションされる
+
+## SweepGradientの使用例
+
+```kotlin
+ gradient = SweepGradient(
+            //中心点x,y
+            w / 2f, h / 2f,
+            //グラデーションの色,割合
+            colors, positions,
+        )
+        //開始点を画面上部側に変更
+        val matrix = Matrix()
+        matrix.preRotate(-90f, w / 2f, h / 2f) // グラデーションの開始位置を上部に設定
+        gradient.setLocalMatrix(matrix)
+        paint.shader = gradient
+```
