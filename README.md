@@ -82,6 +82,10 @@
 
 ・[StatusBar](text/StatusBar.md)
 
+・[Location](text/Loacation.md)
+
+・[端末の傾き](text/accelerometer.md)
+
 ### アニメーション
 
 ・[MotionLayout](text/MotionLayout.md)
