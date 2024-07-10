@@ -88,6 +88,8 @@
 
 ### アニメーション
 
+・[AnimatonBasic](text/Animation_Basic.md)
+
 ・[MotionLayout](text/MotionLayout.md)
 
 ・[MotionToolBar](text/MotionToolBar.md)
