@@ -42,6 +42,8 @@
 
 ・[Notification](text/Notification.md)
 
+・[Picture in Picture](text/PIP.md)
+
 ### UIコンポーネント
 
 ・[レイアウト全般](text/GeneralLayoutSettings.md)
