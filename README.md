@@ -44,6 +44,8 @@
 
 ・[Picture in Picture](text/PIP.md)
 
+・[Export,Import File](text/Export_and_Import.md)
+
 ### UIコンポーネント
 
 ・[レイアウト全般](text/GeneralLayoutSettings.md)
