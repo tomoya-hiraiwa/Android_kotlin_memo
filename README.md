@@ -28,6 +28,8 @@
 
 ・[File](text/File.md)
 
+・[Drag & Drop](text/Drag_and_Drop)
+
 ### Android
 
 ・[MediaPlayer](text/MediaPlayer.md)
