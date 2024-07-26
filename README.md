@@ -28,7 +28,7 @@
 
 ・[File](text/File.md)
 
-・[Drag & Drop](text/Drag_and_Drop)
+・[Drag & Drop](text/Drag_and_Drop.md)
 
 ### Android
 
