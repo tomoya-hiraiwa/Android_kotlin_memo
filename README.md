@@ -48,6 +48,8 @@
 
 ・[Export,Import File](text/Export_and_Import.md)
 
+・[Service](text/Service.md)
+
 ### UIコンポーネント
 
 ・[レイアウト全般](text/GeneralLayoutSettings.md)
