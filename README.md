@@ -138,6 +138,8 @@
 
 ・[Room](text/Room.md)
 
+・[MapView](text/MapView.md)
+
 ### その他
 
 ・[変数テンプレ](text/variable_template.md)
