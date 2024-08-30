@@ -95,3 +95,21 @@ private fun deleteData(file: File){
         getData(file)
     }
 ```
+
+### 元のキー名にスペースなどが含まれている場合
+
+・そのまま変数名とすることができないので、`@SerializedName`アノテーションを使用
+
+・例: `event Id`というキーがある場合
+
+```kotlin
+data class Sample(@SerializedName("event Id") var eventId: Int = 0)
+```
+
+### キーの値がバラバラ（直接バリューのようになっている）時
+
+・`Map<String, Any>`で取得する (Anyの部分はデータ形式に合わせる)
+
+例：`Map<String,List<ChildItem>>`　など
+
+
