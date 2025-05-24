@@ -71,4 +71,22 @@ fun GreetingPreview(){
 <img src="photos/compose_preview.png">
 </p>
 
-[次：UIの修正 >](text_compose/Compose_basic_2.md)
+## 監視可能なリストの作成
+
+### Listを作成しておき、remember内で`toMutableStateList`を呼び出す
+
+```kotlin
+val list = remember { unobservableList.toMutableStateList() }
+```
+
+### `mutableStateListOf`を使用する
+
+・mutableStateOf→`MutableState<T>`を返す
+
+・mutableStateListOf→`SnapshotStateList<T>`を返す
+
+### `SnapshotStateList`
+
+・Compose用のステートを持ったリスト型
+
+・基本的にmutableListなどと同じ使い方ができる
