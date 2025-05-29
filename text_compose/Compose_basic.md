@@ -90,3 +90,36 @@ val list = remember { unobservableList.toMutableStateList() }
 ・Compose用のステートを持ったリスト型
 
 ・基本的にmutableListなどと同じ使い方ができる
+
+## サイズの指定
+
+### `Modifier.size`を使用する
+
+ex)
+
+```kotlin
+ Image(
+       painter = painterResource(R.drawable.world_map),
+       contentDescription = null,
+       modifier
+        .size(650.dp)
+        .offset(y = 50.dp)
+)
+```
+
+この場合、親のレイアウトサイズが指定した値より小さい場合、親のサイズに合わされる
+
+### `Modifier.requiredSize`を使用
+
+ex)
+
+```kotlin
+ Box(
+        modifier = Modifier
+            .requiredSize(width = 850.dp, height = 1500.dp)
+            .rotate(deg)
+            .background(color = colorResource(R.color.pink))
+    )
+```
+
+こちらは、親のサイズに関わらず必ずこのサイズで表示される
