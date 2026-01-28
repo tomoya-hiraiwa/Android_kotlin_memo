@@ -148,6 +148,8 @@
 
 ・[Composeの基本](text_compose/Compose_basic.md)
 
+・[ComposeでのUIAutomator](text_compose/Compose_UIAutomator.md)
+
 ### UIコンポーネント
 
 ・[View + Compose](text_compose/ViewWithCompose.md)
@@ -165,6 +167,7 @@
 ・[Fab](text_compose/ComposeFab.md)
 
 ・[Card](text_compose/ComposeCard.md)
+
 
 ## エラー対応
 
